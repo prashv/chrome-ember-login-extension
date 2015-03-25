@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "mGaadi",
+  "short_name": "Login",
+  "version": "1.0",
+  "author": "Prashannth Vijayakumar",
+  "description": "Ember Login Client for REST API",
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "background": {
+    "persistent": false,
+    "scripts": ["js/app.js"]
+  },
+  "permissions": ["storage", "alarms", "geolocation", "notifications", "<all_urls>","tabs", "http://*/*", "https://*/*" ],
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+  "browser_action": {
+  "default_title": "mGaadi",
+  "default_icon": "icon_128.png",
+  "default_popup": "index.html"
+  },
+  "offline_enabled":true,
+  "minimum_chrome_version": "23"
+}

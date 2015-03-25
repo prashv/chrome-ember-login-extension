@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Ember Starting Point v1.0.0-rc.3" />
+<meta charset=utf-8 />
+<title>Login</title>
+  <script src="js/jquery-1.9.1.js"></script>
+  <script src="js/handlebars-1.0.0-rc.3.js"></script>
+  <script src="js/ember-1.0.0-rc.3.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/app.js"></script>
+  <link href="css/bootstrap-combined.min.css" rel="stylesheet">
+</head>
+<body>
+  <script type="text/x-handlebars" data-template-name="index">
+<form class="form-horizontal" {{action "login" on="submit"}}>
+  {{#if loginSuccess}}
+    <div class="alert">Login Success</div>
+  {{/if}}
+
+  {{#if loginFailed}}
+    <div class="alert">Invalid username or password.</div>
+  {{/if}}
+
+  {{#if isSlowConnection}}
+    <div class="alert alert-info">The request seems to be taking more time than usual, please wait.</div>
+  {{/if}}
+
+  <div class="control-group">
+    <div class="control-label">
+      <label>Email</label>
+    </div>
+
+    <div class="controls">
+      {{input value=email_id type="text"}}
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="control-label">
+      <label>Password</label>
+    </div>
+
+    <div class="controls">
+      {{input value=password type="password"}}
+    </div>
+  </div>
+
+  <button type="submit" class="btn" {{bindAttr disabled="isProcessing"}}>Log in!</button>
+</form>
+</script>
+</body>
+</html>
